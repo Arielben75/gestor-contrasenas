@@ -102,6 +102,37 @@ npm run start:dev
 - `POST /auth/cambiar-password-master`: Cambiar contraseña maestra
 - `DELETE /auth/passwords/:id`: Eliminar una contraseña
 
+## 📸 Capturas de Pantalla
+
+A continuación, se muestran algunas capturas de pantalla de la aplicación en funcionamiento:
+
+### Creación de Usuarios
+
+![Creación de Usuario](/public/assets/images/createUser.png)
+_Pantalla de creación del usuario_
+
+### Login del Usuario
+
+![Pantalla de Login](/public/assets/images/loginUser.png)
+_Vista principal del login del usuario_
+
+### Gestión de Contraseñas
+
+![Gestión de Contraseñas](/public/assets/images/gestorContresena2.png)
+_Interfaz para gestionar las contraseñas almacenadas_
+
+### Agregar Nueva Contraseña
+
+![Agregar Contraseña](/public/assets/images/gestorContresena1.png)
+_Formulario para agregar nuevas contraseñas al sistema_
+
+### Cambiar Contraseña Maestra
+
+![Cambiar Contraseña Maestra](/public/assets/images/gestorContresena3.png)
+_Formulario para cambiar contraseña maestra del sistema_
+
+> Nota: Para ver las imágenes en alta resolución, puede acceder a la carpeta `/public/assets/images` del proyecto.
+
 ## 👥 Contribución
 
 Las contribuciones son bienvenidas. Por favor, asegúrate de actualizar las pruebas según corresponda.
