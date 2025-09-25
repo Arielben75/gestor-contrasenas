@@ -38,6 +38,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "compression": "^1.8.0",
+    "libsodium-wrappers": "^0.7.15",
     "luxon": "^3.5.0",
     "prisma": "^6.5.0",
     "reflect-metadata": "^0.2.2",

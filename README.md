@@ -1,98 +1,111 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Gestor de Contraseñas
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Sistema de gestión de contraseñas seguro desarrollado con NestJS y Prisma, que permite a los usuarios almacenar y administrar sus credenciales de forma segura.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 🔗 Repositorio
 
-## Description
+[GitHub - Gestor de Contraseñas](https://github.com/Arielben75/gestor-contrasenas.git)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🚀 Funcionalidad Principal
 
-## Project setup
+El sistema ofrece las siguientes características principales:
 
-```bash
-$ yarn install
+- **Gestión de Usuarios**: Registro y autenticación de usuarios con validación de contraseñas seguras.
+- **Almacenamiento Seguro**: Cifrado de contraseñas utilizando técnicas avanzadas de criptografía.
+- **Contraseña Maestra**: Sistema de protección mediante contraseña maestra para acceder a las credenciales almacenadas.
+- **CRUD de Contraseñas**: Funcionalidades completas para crear, leer, actualizar y eliminar contraseñas almacenadas.
+- **Búsqueda**: Capacidad de buscar contraseñas almacenadas por diferentes criterios.
+
+## 🛠️ Tecnologías Empleadas
+
+### Backend
+
+- **NestJS**: Framework de Node.js para construir aplicaciones del lado del servidor eficientes y escalables.
+- **TypeScript**: Lenguaje de programación tipado que mejora la calidad y mantenibilidad del código.
+- **Prisma**: ORM moderno para Node.js y TypeScript que facilita el acceso y manipulación de la base de datos.
+- **SQLite**: Base de datos relacional ligera utilizada para almacenar la información.
+
+### Seguridad
+
+- **JWT (JSON Web Tokens)**: Para la autenticación y autorización de usuarios.
+- **libsodium-wrappers**: Biblioteca criptográfica para el cifrado seguro de contraseñas.
+- **bcrypt**: Para el hash seguro de contraseñas maestras.
+- **crypto (Node.js)**: Módulo nativo para operaciones criptográficas adicionales.
+
+### Características Adicionales
+
+- **Swagger**: Documentación automática de la API REST.
+- **Compression**: Middleware para comprimir las respuestas HTTP.
+- **Class Validator**: Para la validación de DTOs y datos de entrada.
+- **Class Transformer**: Para la transformación de objetos y serialización.
+
+## 🏗️ Estructura del Proyecto
+
+```
+├── src/
+│   ├── modules/
+│   │   ├── auth/           # Autenticación y gestión de contraseñas
+│   │   └── usuarios/       # Gestión de usuarios
+│   ├── configurations/     # Configuraciones del sistema
+│   ├── database/          # Configuración de la base de datos
+│   ├── decorators/        # Decoradores personalizados
+│   ├── dto/              # Objetos de transferencia de datos
+│   ├── interceptors/     # Interceptores para el formateo de respuestas
+│   └── pipes/           # Pipes para validación
+├── prisma/
+│   └── schema.prisma    # Esquema de la base de datos
+└── test/               # Pruebas e2e
 ```
 
-## Compile and run the project
+## 🔒 Características de Seguridad
+
+- Cifrado de contraseñas usando PBKDF2 y secretbox de libsodium
+- Validación robusta de contraseñas
+- Protección contra ataques CSRF y XSS
+- Sistema de tokens JWT para autenticación
+- Sanitización de datos de entrada
+
+## 🚀 Cómo Empezar
+
+1. Clonar el repositorio:
 
 ```bash
-# development
-$ yarn run start
-
-# watch mode
-$ yarn run start:dev
-
-# production mode
-$ yarn run start:prod
+git clone https://github.com/Arielben75/gestor-contrasenas.git
 ```
 
-## Run tests
+2. Instalar dependencias:
 
 ```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
+npm install
 ```
 
-## Deployment
+3. Configurar las variables de entorno (crear archivo .env)
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+4. Ejecutar las migraciones de Prisma:
 
 ```bash
-$ yarn install -g mau
-$ mau deploy
+npx prisma migrate dev
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+5. Iniciar la aplicación:
 
-## Resources
+```bash
+npm run start:dev
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+## 📝 Endpoints Principales
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+- `POST /auth/login`: Autenticación de usuarios
+- `POST /auth/agregar-password`: Agregar nueva contraseña
+- `POST /auth/ver-passwords`: Ver contraseñas almacenadas
+- `POST /auth/buscar-passwords`: Buscar contraseñas específicas
+- `POST /auth/cambiar-password-master`: Cambiar contraseña maestra
+- `DELETE /auth/passwords/:id`: Eliminar una contraseña
 
-## Support
+## 👥 Contribución
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Las contribuciones son bienvenidas. Por favor, asegúrate de actualizar las pruebas según corresponda.
 
-## Stay in touch
+## 📄 Licencia
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+[MIT](https://choosealicense.com/licenses/mit/)

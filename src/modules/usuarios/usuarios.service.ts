@@ -56,6 +56,7 @@ export class UsuariosService {
             password: hashedPassword,
             creadoEn: DateTime.now().toISO(),
             actualizadoEn: DateTime.now().toISO(),
+            salt: 'N/A',
           },
         });
         return dataResponseSuccess({ data: insert });
